@@ -123,6 +123,7 @@ public class EmployeeController {
 			for (Employee employee : employeeList) {
 				if (employee.getEmpname().equals(empname)) {
 					employeeToBeDeleted = employee;
+					break;
 				}
 			}
 			if (employeeToBeDeleted != null) {

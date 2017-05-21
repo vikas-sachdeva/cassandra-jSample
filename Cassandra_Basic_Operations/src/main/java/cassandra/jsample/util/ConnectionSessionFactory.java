@@ -8,7 +8,7 @@ public class ConnectionSessionFactory {
 	private Cluster cluster;
 	private Session session;
 
-	public void connect(final String node, final int port) {
+	public void connect(String node, int port) {
 		this.cluster = Cluster.builder().addContactPoint(node).withPort(port).build();
 		session = cluster.connect();
 	}
