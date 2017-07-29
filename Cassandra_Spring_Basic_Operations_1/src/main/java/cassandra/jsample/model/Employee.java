@@ -1,7 +1,8 @@
 package cassandra.jsample.model;
 
-import java.util.Date;
 import java.util.UUID;
+
+import com.datastax.driver.core.LocalDate;
 
 public class Employee {
 
@@ -15,9 +16,10 @@ public class Employee {
 
 	private String department;
 
-	private Date dateofbirth;
+	private LocalDate dateofbirth;
 
-	public Employee(UUID empid, String empname, String occupation, String gender, String department, Date dateofbirth) {
+	public Employee(UUID empid, String empname, String occupation, String gender, String department,
+			LocalDate dateofbirth) {
 		this.empid = empid;
 		this.empname = empname;
 		this.occupation = occupation;
@@ -26,12 +28,8 @@ public class Employee {
 		this.dateofbirth = dateofbirth;
 	}
 
-	public Employee(String empname, String occupation, String gender, String department, Date dateofbirth) {
-		this.empname = empname;
-		this.occupation = occupation;
-		this.gender = gender;
-		this.department = department;
-		this.dateofbirth = dateofbirth;
+	public Employee(String empname, String occupation, String gender, String department, LocalDate dateofbirth) {
+		this(null, empname, occupation, gender, department, dateofbirth);
 	}
 
 	public UUID getEmpid() {
@@ -74,11 +72,11 @@ public class Employee {
 		this.department = department;
 	}
 
-	public Date getDateofbirth() {
+	public LocalDate getDateofbirth() {
 		return dateofbirth;
 	}
 
-	public void setDateofbirth(Date dateofbirth) {
+	public void setDateofbirth(LocalDate dateofbirth) {
 		this.dateofbirth = dateofbirth;
 	}
 
