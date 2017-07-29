@@ -1,6 +1,6 @@
 package cassandra.jsample;
 
-import java.util.Calendar;
+import com.datastax.driver.core.LocalDate;
 
 import cassandra.jsample.controller.EmployeeController;
 import cassandra.jsample.model.Employee;
@@ -16,15 +16,13 @@ public class App {
 
 		controller.printData();
 
-		Calendar calendar = Calendar.getInstance();
-		calendar.set(1960, 01, 21);
-		Employee employee = new Employee("George", "Professor", "Male", "MBA", calendar.getTime());
+		Employee employee = new Employee("George", "Professor", "Male", "MBA",
+				LocalDate.fromYearMonthDay(1950, 01, 21));
 		controller.insert(employee);
 
 		controller.printData();
 
-		calendar.set(1985, 02, 15);
-		employee = new Employee("Bob", "Assistant Professor", "Male", "MBA", calendar.getTime());
+		employee = new Employee("Bob", "Assistant Professor", "Male", "MBA", LocalDate.fromYearMonthDay(1985, 02, 15));
 		controller.insert(employee);
 
 		controller.printData();
