@@ -14,8 +14,6 @@
 
 	<context:component-scan base-package="cassandra.jsample" />
 
-	<bean id="app" class="cassandra.jsample.App" />
-
 	<import resource="classpath:cassandra-config.xml" />
 
 </beans>
